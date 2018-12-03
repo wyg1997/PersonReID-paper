@@ -8,7 +8,8 @@
 
 1. 使用基于图片主义分割的掩码图片(masked image)来补充输入，以解决ReID中背景杂乱的问题。
 
-2. 使用一种新的深度学习框架，可以输入掩码图片以及原图。另外，分级地抽取特征。
+2. 使用一种新的深度学习框架，可以输入掩码图片以及原图。另外，分级地抽取特征。  
+![network](https://github.com/wyg1997/PersonReID-paper/blob/master/reading/CVPR2018/image/Lei_MaskReID_0.png)
 
 3. 提出一种新的loss函数，对比了之前的triplet loss和N-pair loss，文中说triplet loss只是拉近了**一个正样本**和推远了**一个负样本**，而N-pair loss拉近了**一个正样本**和推远了**n个负样本**，而论文的loss就比较厉害了，它可以拉近**n个正样本**和推远**n个负样本**。
 
