@@ -46,3 +46,69 @@
 - ICCV2015: Human Parsing with Contextualized Convolutional Neural Network
 
 ### 4. spatial attention的相关工作
+
+- CVPR2018: Parameter-Free Spatial Attention Network for Person Re-Identification
+
+### 5. human parsing模型训练
+
+- 基于[CE2P](https://github.com/liutinglt/CE2P)  
+
+- 参数设置：batch-size: 20, steps: 230000, input-size: (384, 128), random-scale: True, mirror: False  
+
+- 分类信息重组织  
+
+> 原分类：
+>> 0.Background  
+1.Hat  
+2.Hair  
+3.Glove  
+4.Sunglasses  
+5.UpperClothes  
+6.Dress  
+7.Coat  
+8.Socks  
+9.Pants  
+10.Jumpsuits  
+11.Scarf  
+12.Skirt  
+13.Face  
+14.Left-arm  
+15.Right-arm  
+16.Left-leg  
+17.Right-leg  
+18.Left-shoe  
+19.Right-shoe
+
+> 新分类：
+>> 0.Background  
+1.[1, 2, 4, 13]  
+2.[5, 6, 7, 9, 10, 11, 12]  
+3.[14]  
+4.[15]  
+6.[16, 18]  
+7.[17, 19]
+
+
+- 资源占用统计  
+Memory: 原项目中代码存在问题，程序开始占用10Gb，随后持续上升  
+GPU Memory: 8.93Gb
+
+- 训练结果数据  
+Pixel Accuracy: 0.663313  
+Mean accuracy: 0.314073  
+Mean IU: 0.236828  
+class_0: 0.7844  
+class_1: 0.3227  
+class_2: 0.3396  
+class_3: 0.0990  
+class_4: 0.1154  
+class_5: 0.0567  
+class_6: 0.0998
+
+- 结果可视化
+
+> LIP
+
+
+> market1501
+
