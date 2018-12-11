@@ -94,7 +94,9 @@ Memory: 原项目中代码存在问题，程序开始占用10Gb，随后持续�
 GPU Memory: 8.93Gb
 
 - 训练结果数据  
-Pixel Accuracy: 0.663313  
+
+> 384x128
+>> Pixel Accuracy: 0.663313  
 Mean accuracy: 0.314073  
 Mean IU: 0.236828  
 class_0: 0.7844  
@@ -104,6 +106,19 @@ class_3: 0.0990
 class_4: 0.1154  
 class_5: 0.0567  
 class_6: 0.0998
+
+> 473x473
+>> Pixel Accuracy: 0.834167  
+Mean accuracy: 0.575554
+Mean IU: 0.475463
+class_0: 0.7844
+class_1: 0.6652    
+class_2: 0.6951  
+class_3: 0.3543  
+class_4: 0.4130  
+class_5: 0.1832  
+class_6: 0.2330
+
 
 - 结果可视化
 
