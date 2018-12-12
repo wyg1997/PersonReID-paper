@@ -32,10 +32,10 @@
 ### 2. 看re-id跟mask, human parsing相结合的论文
 
 - [CVPR2018: Human Semantic Parsing for Person Re-identification](https://github.com/wyg1997/PersonReID-paper/blob/master/documents/CVPR2018/Kalayeh_Human_Semantic_Parsing_CVPR_2018.pdf)   
->[解读](https://github.com/wyg1997/PersonReID-paper/blob/master/reading/CVPR2018/Kalayeh_Human_Semantic_Parsing_CVPR2018.md)
+> [解读](https://github.com/wyg1997/PersonReID-paper/blob/master/reading/CVPR2018/Kalayeh_Human_Semantic_Parsing_CVPR2018.md)
 
 - [CVPR2018: MaskReID: A Mask Based Deep Ranking Neural Network for Person Re-identification](https://github.com/wyg1997/PersonReID-paper/blob/master/documents/CVPR2018/LiQi_MaskReID_A_Mask_Based_Deep_Ranking_Neural_Network_for_Reid_CVPR_2018.pdf)  
->[解读](https://github.com/wyg1997/PersonReID-paper/blob/master/reading/CVPR2018/Lei_MaskReID_CVPR2018.md)
+> [解读](https://github.com/wyg1997/PersonReID-paper/blob/master/reading/CVPR2018/Lei_MaskReID_CVPR2018.md)
 
 - CVPR2018: Mask-guided Contrastive Attention Model for Person Re-Identification
 
@@ -48,6 +48,7 @@
 ### 4. spatial attention的相关工作
 
 - CVPR2018: Parameter-Free Spatial Attention Network for Person Re-Identification
+> [解读](https://github.com/wyg1997/PersonReID-paper/blob/master/reading/CVPR2018/Wang_Parameter-Free_Attention_Network_CVPR2018.md)
 
 ### 5. human parsing模型训练
 
