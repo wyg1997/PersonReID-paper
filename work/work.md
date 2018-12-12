@@ -3,31 +3,31 @@
 ### 1. 调研目前re-id网络识别错误的原因，思考如何解决pose和occlusion的问题
 
 1. 遮挡：  
-![](visualize/00002132_0008_00000000.jpg)  
-![](visualize/00001804_0001_00000000.jpg)  
-![](visualize/00001699_0001_00000000.jpg)  
-![](visualize/00001683_0001_00000000.jpg)  
-![](visualize/00000075_0002_00000000.jpg)  
-![](visualize/00000803_0001_00000000.jpg)  
+![](visualize/re-id_origin/00002132_0008_00000000.jpg)  
+![](visualize/re-id_origin/00001804_0001_00000000.jpg)  
+![](visualize/re-id_origin/00001699_0001_00000000.jpg)  
+![](visualize/re-id_origin/00001683_0001_00000000.jpg)  
+![](visualize/re-id_origin/00000075_0002_00000000.jpg)  
+![](visualize/re-id_origin/00000803_0001_00000000.jpg)  
 
 2. 多目标(效果比较差)：  
-![](visualize/00000786_0000_00000000.jpg)  
-![](visualize/00000817_0000_00000000.jpg)  
-![](visualize/00000821_0000_00000000.jpg)  
-![](visualize/00000828_0000_00000000.jpg)  
-![](visualize/00001478_0001_00000000.jpg)
+![](visualize/re-id_origin/00000786_0000_00000000.jpg)  
+![](visualize/re-id_origin/00000817_0000_00000000.jpg)  
+![](visualize/re-id_origin/00000821_0000_00000000.jpg)  
+![](visualize/re-id_origin/00000828_0000_00000000.jpg)  
+![](visualize/re-id_origin/00001478_0001_00000000.jpg)
 
 3. 低分辨率(有影响，但不是非常严重)：  
-![](visualize/00000352_0001_00000000.jpg)  
-![](visualize/00000448_0006_00000000.jpg)  
-![](visualize/00000537_0001_00000000.jpg)  
-![](visualize/00001505_0004_00000000.jpg)  
+![](visualize/re-id_origin/00000352_0001_00000000.jpg)  
+![](visualize/re-id_origin/00000448_0006_00000000.jpg)  
+![](visualize/re-id_origin/00000537_0001_00000000.jpg)  
+![](visualize/re-id_origin/00001505_0004_00000000.jpg)  
 
 4. 弱光线(黑衣服影响更大)：  
-![](visualize/00000765_0001_00000000.jpg)  
-![](visualize/00001319_0000_00000000.jpg)  
-![](visualize/00001322_0000_00000000.jpg)  
-![](visualize/00001363_0001_00000000.jpg)
+![](visualize/re-id_origin/00000765_0001_00000000.jpg)  
+![](visualize/re-id_origin/00001319_0000_00000000.jpg)  
+![](visualize/re-id_origin/00001322_0000_00000000.jpg)  
+![](visualize/re-id_origin/00001363_0001_00000000.jpg)
 
 ### 2. 看re-id跟mask, human parsing相结合的论文
 
@@ -109,10 +109,10 @@ class_6: 0.0998
 
 > 473x473
 >> Pixel Accuracy: 0.834167  
-Mean accuracy: 0.575554
-Mean IU: 0.475463
+Mean accuracy: 0.575554  
+Mean IU: 0.475463  
 class_0: 0.7844
-class_1: 0.6652    
+class_1: 0.6652   
 class_2: 0.6951  
 class_3: 0.3543  
 class_4: 0.4130  
@@ -123,7 +123,21 @@ class_6: 0.2330
 - 结果可视化
 
 > LIP
+>> ![](visualize/human_parsing/171017_566909.png)左右手解析准确  
+>> ![](visualize/human_parsing/196574_436289.png)整体解析比较准确  
+>> ![](visualize/human_parsing/276420_495518.png)  
+>> ![](visualize/human_parsing/407159_1275257.png)
 
+>> ![](visualize/human_parsing/339595_465232.png)  
+>> ![](visualize/human_parsing/376295_206426.png)多目标会解析到其它目标  
+>> ![](visualize/human_parsing/536570_212328.png)多目标只解析到后面大人的信息  
 
-> market1501
+> market1501(原数据集的原因，使饰品、背包等特征不能学习解析，但其它部件解析情况比较好)
+>> ![](visualize/human_parsing/00000032_0006_00000004.png)  
+>> ![](visualize/human_parsing/00000278_0004_00000008.png)一般目标解析效果不错  
+>> ![](visualize/human_parsing/00000348_0002_00000002.png)  
+>> ![](visualize/human_parsing/00000126_0002_00000001.png)低分辨率仍然有不小的影响  
+>> ![](visualize/human_parsing/00000569_0003_00000000.png)低分辨率错误解析部件  
+>> ![](visualize/human_parsing/00000316_0006_00000004.png)目标与背景颜色接近，影响解析  
+>> ![](visualize/human_parsing/00001191_0006_00000004.png)未知原因不正常解析  
 
