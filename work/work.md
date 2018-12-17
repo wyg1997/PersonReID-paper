@@ -37,20 +37,20 @@
 - [CVPR2018: MaskReID: A Mask Based Deep Ranking Neural Network for Person Re-identification](https://github.com/wyg1997/PersonReID-paper/blob/master/documents/CVPR2018/LiQi_MaskReID_A_Mask_Based_Deep_Ranking_Neural_Network_for_Reid_CVPR_2018.pdf)  
 > [解读](https://github.com/wyg1997/PersonReID-paper/blob/master/reading/CVPR2018/Lei_MaskReID_CVPR2018.md)
 
-- CVPR2018: Mask-guided Contrastive Attention Model for Person Re-Identification
+- [CVPR2018: Mask-guided Contrastive Attention Model for Person Re-Identification](https://github.com/wyg1997/PersonReID-paper/blob/master/documents/CVPR2018/Song_Mask-Guided_Contrastive_Attention_CVPR_2018_paper.pdf)
 
 ### 3. 总结目前human parsing最好的模型
 
-- CVPR2017: Look into Person: Self-supervised Structure-sensitive Learning and A New Benchmark for Human Parsing
+- [CVPR2017: Look into Person: Self-supervised Structure-sensitive Learning and A New Benchmark for Human Parsing](https://github.com/wyg1997/PersonReID-paper/blob/master/documents/CVPR2017/Gong_Look_Into_Person_CVPR_2017_paper.pdf)
 
-- ICCV2015: Human Parsing with Contextualized Convolutional Neural Network
+- [ICCV2015: Human Parsing with Contextualized Convolutional Neural Network](https://github.com/wyg1997/PersonReID-paper/blob/master/documents/ICCV2015/Liang_Human_parsing_with_CNN_ICCV2015.pdf)
 
 ### 4. spatial attention的相关工作
 
-- CVPR2018: Parameter-Free Spatial Attention Network for Person Re-Identification
+- [CVPR2018: Parameter-Free Spatial Attention Network for Person Re-Identification](https://github.com/wyg1997/PersonReID-paper/blob/master/documents/CVPR2018/Wang_Parameter-Free_Spatial_Attention_Network_CVPR2018_paper.pdf)
 > [解读](https://github.com/wyg1997/PersonReID-paper/blob/master/reading/CVPR2018/Wang_Parameter-Free_Attention_Network_CVPR2018.md)
 
-### 5. human parsing模型训练
+### 5. human parsing模型训练(384x128)
 
 - 基于[CE2P](https://github.com/liutinglt/CE2P)  
 
@@ -150,3 +150,62 @@ class_6: 0.2330
 2. 由于仅仅重组了原数据集的分类信息，导致像饰品、背包一类部件的信息丢失。
 
 3. 仍然是由于分类信息不太好，导致胳膊、腿部只能解析裸露的皮肤，如果有衣服覆盖，则解析为衣服，所以这两部分的特征要小很多。
+
+### 6.human parsing模型训练(512x512) 
+
+- 基于[CE2P](https://github.com/liutinglt/CE2P)  
+
+- 参数设置：batch-size: 32, steps: 120000, input-size: (512, 512), random-scale: True, mirror: False  
+
+- 分类信息重组织  
+
+> 原分类：
+>> 0.Background  
+1.Hat  
+2.Hair  
+3.Glove  
+4.Sunglasses  
+5.UpperClothes  
+6.Dress  
+7.Coat  
+8.Socks  
+9.Pants  
+10.Jumpsuits  
+11.Scarf  
+12.Skirt  
+13.Face  
+14.Left-arm  
+15.Right-arm  
+16.Left-leg  
+17.Right-leg  
+18.Left-shoe  
+19.Right-shoe
+
+> 新分类：
+>> 0.Background  
+1.[1, 2, 4, 13]  
+2.[5, 6, 7, 11, 12]  
+3.[8, 9, 10, 12]
+4.[14]  
+5.[15]  
+6.[16, 18]  
+7.[17, 19]
+
+
+- 资源占用统计  
+Memory: 原项目中代码存在问题，程序开始占用10Gb，随后持续上升到28.9Gb  
+GPU Memory: 40.39Gb
+
+- 训练结果数据  
+
+> 512x512
+>> Pixel Accuracy: 0.897928  
+Mean accuracy: 0.801091  
+Mean IU: 0.68866  
+class_0: 0.8735  
+class_1: 0.7714  
+class_2: 0.7939  
+class_3: 0.7266  
+class_4: 0.6386  
+class_5: 0.5283  
+class_6: 0.5209
