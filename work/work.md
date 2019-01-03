@@ -209,3 +209,13 @@ class_3: 0.7266
 class_4: 0.6386  
 class_5: 0.5283  
 class_6: 0.5209
+
+### 7.SANet两条流网络训练
+
+- 第一次训练：未加入attention，未做特征匹配，input_size=384x128，p_size=16，k_size=4，epoch=400，对所有特征进行hard\_example\_triplet。  
+\--------------------  
+Result:  
+mAP: 49.3%  
+rank-1: 71.2%  
+\--------------------  
+
